@@ -1,0 +1,122 @@
+html {
+  font-family: "Poppins", serif;
+  background: #eef2f9;
+}
+
+.mb32 {
+  margin-bottom: 32px;
+}
+
+.product-card {
+  width: 887px;
+  height: 661px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0px 24px 28px 9px rgba(179, 193, 217, 0.33);
+  margin: auto;
+}
+
+.product-content {
+  width: 100%;
+  padding: 82px;
+}
+
+.product-image,
+.product {
+  display: inline-block;
+}
+
+.product-image {
+  vertical-align: top;
+}
+
+/* -----product----- */
+.product {
+  width: 442px;
+  height: 497px;
+  margin-left: 32px;
+}
+
+.product-tag {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 20px;
+  background: #191847;
+}
+
+.product-name {
+  width: 419px;
+  color: #191847;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  padding-top: 10px;
+}
+
+/* -----product-price----- */
+.old-price {
+  color: #191847;
+  font-family: Roboto;
+  font-size: 18px;
+  text-decoration: line-through;
+}
+
+.price {
+  color: #191847;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.offer-details {
+  color: #191847;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+/* -----product-bt----- */
+.product-bt {
+  /* button */
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #4788e9;
+  box-shadow: 0px 7px 0px 0px #1c57ee;
+  /* font */
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* -----stock----- */
+.stock-info {
+  color: #000;
+  font-size: 14px;
+}
+
+.stock-icon {
+  margin-right: 5px;
+}
+
+/* ----bts-secon----- */
+.add-secon {
+  width: 213px;
+  height: 64px;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 2px solid #c9c9da;
+  color: #191847;
+  font-size: 18px;
+}
+
+.add-wishlist {
+  margin-left: 10px;
+}
+
+.add-secon--desc {
+  vertical-align: super;
+}
