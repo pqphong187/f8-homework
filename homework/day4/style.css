@@ -8,6 +8,7 @@ html {
 
 body {
   background-color: #d8dae2;
+  overflow-x: hidden;
 }
 
 .container {
