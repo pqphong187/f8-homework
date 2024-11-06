@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #d8dae2;
+}
+
+.container {
+  width: 1563px;
+  height: 777px;
+}
+
+.collection {
+  padding: 62px;
+  border-radius: 26px;
+  background: #eff0f1;
+  box-shadow: 0px 76px 27px 0px rgba(6, 27, 82, 0.1);
+}
+
+/* ----header---- */
+.header-name {
+  color: #0e0e38;
+  font-family: Merriweather;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  margin-top: 0;
+}
+
+.option-list {
+  padding: 0;
+  margin: 0;
+}
+
+.option-item {
+  display: inline-block;
+  margin-right: 4px;
+  border-radius: 8px;
+  background: #fff;
+  padding: 10px;
+}
+
+.option-link {
+  text-decoration: none;
+  color: #0e0e38;
+  font-weight: 500;
+}
+
+/* ----collection-list----- */
+.collection-list {
+  margin-top: 56px;
+  display: inline-block;
+}
+
+.collection-item {
+  width: 437px;
+  height: 489px;
+  border-radius: 32px;
+  background: #fff;
+  padding: 24px;
+}
+
+/* -----image----- */
+.collection-mid {
+  margin: 0 58px;
+}
+
+.main-img {
+  border-radius: 24px;
+  width: 389px;
+  height: 268px;
+}
+
+.sub-imgs {
+  margin-top: 10px;
+}
+
+.sub-img {
+  width: 119px;
+  height: 97px;
+  border-radius: 24px;
+}
+
+.mid-img {
+  margin: 0 10px;
+}
+
+/* ----collection-desc---- */
+.collection-desc {
+  margin-top: 18px;
+}
+
+.sub-name {
+  margin: 0;
+  display: inline-block;
+  color: #0e0e38;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.link-desc {
+  float: right;
+  color: #0e0e38;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.icon {
+  vertical-align: middle;
+}
