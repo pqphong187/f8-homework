@@ -134,12 +134,14 @@ body {
 
 #email {
   padding: 10px;
+  font-family: "Roboto", sans-serif;
   color: #9c9c9c;
   border: 1px solid #9c9c9c;
 }
 
 .footer-btn {
   padding: 10px;
+  font-family: "Roboto", sans-serif;
   background: #3a3a3a;
   color: #fff;
   font-size: 16px;
