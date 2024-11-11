@@ -36,7 +36,7 @@ body {
   color: #ad5727;
 }
 
-.header-banner {
+.banner-top {
   margin-top: 32px;
 }
 
@@ -109,7 +109,7 @@ body {
 }
 /* --content: end-- */
 
-.banner-main {
+.banner-bot {
   margin-top: 96px;
 }
 
@@ -136,6 +136,7 @@ body {
   padding: 10px;
   font-family: "Roboto", sans-serif;
   color: #9c9c9c;
+  font-size: 16px;
   border: 1px solid #9c9c9c;
 }
 
