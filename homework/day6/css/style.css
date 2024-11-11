@@ -67,7 +67,7 @@ body {
 /* --about: end-- */
 
 /* --content: begin-- */
-.content {
+.content-intro {
   display: flex;
   gap: 32px;
 }
