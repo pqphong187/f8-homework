@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fffcf4;
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 28px 135px 65px;
+}
+
+/* header: begin  */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.navbar {
+  margin-left: auto;
+}
+
+.navbar-list {
+  display: flex;
+  padding: 8px 21px;
+}
+
+.navbar-link {
+  color: #5f5b53;
+  padding: 8px 21px;
+  font-size: 16px;
+}
+
+.highlight {
+  color: #171100;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn-sign {
+  margin-left: 49px;
+  text-align: center;
+  border-radius: 999px;
+  background: #171100;
+  width: 144px;
+  height: 49px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 50px;
+}
+/* header: end  */
+
+/* main: begin */
+.main {
+  padding-top: 57px;
+}
+
+.hero {
+  display: flex;
+}
+
+.hero-media {
+  width: 48%;
+}
+
+.hero-content {
+  width: 52%;
+  margin-left: 230px;
+}
+
+.heading {
+  padding-top: 64px;
+  color: #171100;
+  font-family: Sen;
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 68px;
+  letter-spacing: -1.16px;
+}
+
+.heading-desc {
+  padding-top: 22px;
+  color: #5f5b53;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.btn-action {
+  display: inline-block;
+  width: 180px;
+  color: #fff;
+  border-radius: 999px;
+  background: #ffb900;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 64px;
+}
+
+.btn-group {
+  padding-top: 38px;
+  display: flex;
+  align-items: center;
+}
+
+.watch-video {
+  margin-left: 28px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+}
+
+.watch-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0px 6px 16px 0px rgb(0, 0, 0, 0.1);
+}
+
+.watch-text {
+  margin-left: 14px;
+  font-family: "Poppins";
+  color: #171100;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.recent {
+  padding-top: 48px;
+  color: #5f5b53;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.stat {
+  padding-top: 8px;
+  display: flex;
+  gap: 28px;
+  color: #5f5b53;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.quantity {
+  margin-right: 14px;
+  color: #171100;
+  font-family: Sen;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 54px;
+}
+/* main: end */
