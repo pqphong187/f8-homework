@@ -10,20 +10,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Sen:wght@400..800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <title>Bài tập buổi 7</title>
+    <title>Bài tập buổi 7+8</title>
 </head>
 
 <body>
-    <div class="container">
-        <!-- header: begin -->
-        <header class="header">
+
+    <!-- header: begin -->
+    <header class="header">
+        <div class="main-content">
             <a class="header-logo" href="#!">
                 Lesson<span>.</span>
             </a>
             <nav class="navbar">
                 <ul class="navbar-list">
                     <li class="navbar-item">
-                        <a href="#" class="navbar-link highlight">Home</a>
+                        <a href="#" class="navbar-link highlight">Home
+                            <div class="underline"></div>
+                        </a>
                     </li>
                     <li class="navbar-item">
                         <a href="#" class="navbar-link">Courses</a>
@@ -38,15 +41,48 @@
             </nav>
 
             <button class="btn-sign">Sign Up</button>
-        </header>
-        <!-- header: end -->
+        </div>
+    </header>
 
-        <!-- main: begin -->
-        <main class="main">
-            <section class="hero">
-                <figure class="hero-media">
-                    <img src="./img/hero.png" alt="Learn without limits and spread knowledge" class="hero-img">
-                </figure>
+    <!-- header: end -->
+
+    <!-- main: begin -->
+    <main class="main">
+        <section class="hero">
+            <div class="main-content">
+                <div class="hero-media">
+                    <figure class="hero-image">
+                        <img src="./img/hero.png" alt="Learn without limits and spread knowledge" class="hero-img">
+                    </figure>
+
+                    <div class="course-box">
+                        <div class="course-group">
+                            <div class="course-intro">
+                                <img src="./img/design.svg" alt="UI/UX Design" class="course-icon">
+                                <div class="course-content">
+                                    <span class="heading-lv3-desc">20 Courses</span>
+                                    <span class="heading-lv3">UI/UX Design</span>
+                                </div>
+                            </div>
+
+                            <div class="course-intro">
+                                <img src="./img/dev.svg" alt="Development" class="course-icon">
+                                <div class="course-content">
+                                    <span class="heading-lv3-desc">20 Courses</span>
+                                    <span class="heading-lv3">Development</span>
+                                </div>
+                            </div>
+
+                            <div class="course-intro">
+                                <img src="./img/marketing.svg" alt="Marketing" class="course-icon">
+                                <div class="course-content">
+                                    <span class="heading-lv3-desc">30 Courses</span>
+                                    <span class="heading-lv3">Marketing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="hero-content">
                     <h1 class="heading">Learn without limits and spread knowledge.</h1>
@@ -56,7 +92,7 @@
                     </p>
 
                     <div class="btn-group">
-                        <button class="btn-action">See Courses</button>
+                        <a href="#!" class="btn">See Courses</a>
                         <a href="#!" class="watch-video">
                             <div class="watch-icon">
                                 <img src="./img/play.svg" alt="Play">
@@ -73,10 +109,104 @@
                     </div>
 
                 </div>
-            </section>
-        </main>
-        <!-- main: end -->
-    </div>
+            </div>
+        </section>
+
+
+        <section class="popular">
+            <div class="main-content">
+                <div class="popular-top">
+                    <div class="popular-info">
+                        <h2 class="heading-lv2">Our popular courses</h2>
+                        <p class="popular-desc">
+                            Build new skills with new trendy courses and shine for the next future career.
+                        </p>
+                    </div>
+
+                    <div class="controls">
+                        <button class="control-btn back">
+                            <img src="./img/back.svg" alt="back">
+                        </button>
+                        <button class="control-btn next">
+                            <img src="./img/back.svg" alt="next">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="course-list">
+                    <!-- item 1 -->
+                    <div class="course-item">
+                        <a href="#!">
+                            <img src="./img/web-des.png" alt="Basic web design" class="course-thumb">
+                        </a>
+                        <div class="course-info">
+                            <div class="course-head">
+                                <h3 class="heading-lv3">Basic web design</h3>
+                                <div class="rating">
+                                    <img src="./img/star.svg" alt="star" class="star">
+                                    <span class="value">4.5</span>
+                                </div>
+                            </div>
+                            <p class="heading-lv3-desc">
+                                Get the best course, gain knowledge and shine for your future career.
+                            </p>
+                            <div class="course-footer">
+                                <span class="price heading-lv3">$120.75</span>
+                                <a class="btn" href="#!">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- item 2 -->
+                    <div class="course-item">
+                        <a href="#!">
+                            <img src="./img/ui-des.png" alt="UI/UX design" class="course-thumb">
+                        </a>
+                        <div class="course-info">
+                            <div class="course-head">
+                                <h3 class="heading-lv3">UI/UX design</h3>
+                                <div class="rating">
+                                    <img src="./img/star.svg" alt="star" class="star">
+                                    <span class="value">4.5</span>
+                                </div>
+                            </div>
+                            <p class="heading-lv3-desc">
+                                Get the best course, gain knowledge and shine for your future career.
+                            </p>
+                            <div class="course-footer">
+                                <span class="price heading-lv3">$120.75</span>
+                                <a class="btn" href="#!">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- item 3 -->
+                    <div class="course-item">
+                        <a href="#!">
+                            <img src="./img/app-des.png" alt="Web App design" class="course-thumb">
+                        </a>
+                        <div class="course-info">
+                            <div class="course-head">
+                                <h3 class="heading-lv3">Web App design</h3>
+                                <div class="rating">
+                                    <img src="./img/star.svg" alt="star" class="star">
+                                    <span class="value">4.5</span>
+                                </div>
+                            </div>
+                            <p class="heading-lv3-desc">
+                                Get the best course, gain knowledge and shine for your future career.
+                            </p>
+                            <div class="course-footer">
+                                <span class="price heading-lv3">$120.75</span>
+                                <a class="btn" href="#!">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- main: end -->
 </body>
 
 </html>

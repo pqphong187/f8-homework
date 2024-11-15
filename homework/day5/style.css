@@ -61,6 +61,16 @@ a {
 
 .item-click {
   font-weight: 500;
+  position: relative;
+}
+
+.item-click div {
+  position: absolute;
+  left: 18px;
+  width: 52px;
+  height: 2px;
+  background-color: #1f1d2a;
+  border-radius: 999px;
 }
 
 .sign-in {
@@ -124,6 +134,50 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.slides {
+  position: relative;
+}
+
+.slides-info {
+  position: absolute;
+  bottom: -10px;
+  left: 25px;
+}
+
+.slide-btn {
+  position: absolute;
+  right: -40px;
+  top: 40%;
+}
+
+.slides-info {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  gap: 5px;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.slide-name {
+  color: #1f1d2a;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.slide-job {
+  color: #9b948e;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.slide-list {
+  display: flex;
+  gap: 2px;
+}
+
 /* ----banner: end----- */
 
 /* ----trusted: begin----- */
@@ -162,12 +216,23 @@ a {
 }
 
 .career-title {
+  position: relative;
   padding-top: 10px;
   color: #1f1d2a;
   text-align: center;
   font-size: 32px;
   font-weight: 600;
 }
+
+.career-title > div {
+  position: absolute;
+  background-image: url(./img/underline.png);
+  width: 114px;
+  height: 6px;
+  bottom: 10px;
+  left: 52%;
+}
+
 /* ----career: end----- */
 
 /* ----instructor: begin----- */
