@@ -123,6 +123,7 @@ a {
 }
 
 .btn-sign {
+  cursor: pointer;
   margin-left: 49px;
   font-family: "Poppins", sans-serif;
   width: 144px;
@@ -286,12 +287,6 @@ a {
   width: 39%;
 }
 
-.popular-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .popular-desc {
   margin-top: 16px;
   color: #5f5b53;
@@ -305,6 +300,7 @@ a {
 }
 
 .control-btn {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -349,10 +345,12 @@ a {
 
 .course-item {
   border-radius: 12px;
+  outline: 1px solid #e2dfda;
   background: #fff;
 }
 
 .course-item:hover {
+  outline: none;
   box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.05);
 }
 
@@ -360,6 +358,8 @@ a {
   padding: 16px 22px 22px;
 }
 
+.popular-top,
+.course-footer,
 .course-head,
 .rating {
   display: flex;
@@ -384,9 +384,6 @@ a {
 }
 
 .course-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-top: 12px;
 }
 
