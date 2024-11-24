@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài 1 cách 1</title>
+    <style>
+        .container {
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid red;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 50px 400px minmax(30px, 1fr) 50px;
+        }
+
+        .item,
+        footer,
+        header {
+            border: 1px dashed blue;
+        }
+
+        header {
+            grid-column: span 3;
+        }
+
+        .left-conent {
+            grid-column: 1 / 2;
+        }
+
+        .right-content {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+        }
+
+        .main-content,
+        .sub-content {
+            grid-column: 2 / 3;
+        }
+
+        footer {
+            grid-column: span 3;
+            grid-row: -1 / -2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>Header</header>
+        <div class="item left-content">left content</div>
+        <div class="item main-content">main content</div>
+        <div class="item sub-content">sub content</div>
+        <div class="item right-content">right content</div>
+        <footer>Footer</footer>
+    </div>
+</body>
+
+</html>
