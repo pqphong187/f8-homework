@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            transform: rotate(45deg);
+        }
+
+        .heart {
+            margin: 200px auto;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation: heartBeat 1s linear infinite alternate;
+        }
+
+        .text {
+            z-index: 1;
+            position: absolute;
+            bottom: 50%;
+            transform: translate(50%, -50%) rotate(-45deg);
+            text-align: center;
+            color: black;
+        }
+
+        .heart::after,
+        .heart::before {
+            content: "";
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart::after {
+            top: -50%;
+            left: 0;
+        }
+
+        .heart::before {
+            left: -50%;
+        }
+
+        @keyframes heartBeat {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heart">
+            <div class="text">Heart</div>
+        </div>
+    </div>
+</body>
+
+</html>
