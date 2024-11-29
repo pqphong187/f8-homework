@@ -65,12 +65,12 @@ img {
   max-height: 100%;
 }
 
-/* nav */
-.navbar {
+/* header */
+.header {
   border-bottom: 1px solid #e6e7e8;
 }
 
-.navbar-container {
+.header-container {
   width: 1520px;
   padding: 0 117px;
   display: flex;
