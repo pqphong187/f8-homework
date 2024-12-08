@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4: Tính chỉ số BMI</title>
+</head>
+
+<body>
+    <script>
+        function bmi(weight, height) {
+            let calcBmi = weight / (height * height);
+            console.log(calcBmi);
+            if (calcBmi > 0 && calcBmi < 18.5) {
+                return "Bạn thiếu cân";
+            } else if (calcBmi >= 18 && calcBmi < 23) {
+                return "Bạn bình thường";
+            } else if (calcBmi >= 23 && calcBmi < 25) {
+                return "Bạn thừa cân";
+            } else if (calcBmi >= 25) {
+                return "Bạn béo phì";
+            } else {
+                return "Dữ liệu không hợp lệ";
+            }
+        }
+
+
+        const weight = parseFloat(prompt("Nhập chiều cân nặng (kg)"));
+        const height = parseFloat(prompt("Nhập chiều cao (m)"));
+        alert(bmi(weight, height));
+    </script>
+</body>
+
+</html>

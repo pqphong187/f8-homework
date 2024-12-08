@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2: Tính tiền điện</title>
+</head>
+
+<body>
+    <script>
+        function electricBill() {
+            let electricNumber = parseFloat(prompt("Nhập số điện của bạn (kWh):"))
+            console.log(electricNumber);
+            if (electricNumber > 0 && electricNumber <= 50) {
+                return `Tiền điện của bạn là: ${electricNumber * 1678} đồng`;
+            } else if (electricNumber > 50 && electricNumber <= 100) {
+                return `Tiền điện của bạn là: ${((electricNumber - 50) * 1734) + (50 * 1678)} đồng`;
+            } else if (electricNumber > 100 && electricNumber <= 200) {
+                return `Tiền điện của bạn là: ${((electricNumber - 100) * 2014) + (50 * 1734) + (50 * 1678)} đồng`;
+            } else if (electricNumber > 200 && electricNumber <= 300) {
+                return `Tiền điện của bạn là: ${((electricNumber - 200) * 2536) + (100 * 2014) + (50 * 1734) + (50 * 1678)} đồng`;
+            } else if (electricNumber > 300 && electricNumber <= 400) {
+                return `Tiền điện của bạn là: ${((electricNumber - 300) * 2834) + (100 * 2536) + (100 * 2014) + (50 * 1734) + (50 * 1678)} đồng`;
+            } else {
+                return `Tiền điện của bạn là: ${((electricNumber - 400) * 2927) + (100 * 2834) + (100 * 2536) + (100 * 2014) + (50 * 1734) + (50 * 1678)} đồng`;
+            }
+        }
+        alert(electricBill())
+    </script>
+</body>
+
+</html>

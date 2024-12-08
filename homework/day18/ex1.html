@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1: Tính thuế</title>
+</head>
+
+<body>
+    <script>
+        function tax() {
+            let salary = parseFloat(prompt("Nhập số tiền lương của bạn (triệu đồng):"));
+            console.log(salary)
+            if (salary <= 11) {
+                return "Không tính thuế";
+            } else if (salary > 11 && salary <= 25) {
+                return `Thuế của bạn là:  ${salary * 0.05} triệu đồng`;
+            } else if (salary > 25 && salary <= 50) {
+                return `Thuế của bạn là:  ${salary * 0.1} triệu đồng`;
+            } else if (salary > 50 && salary <= 80) {
+                return `Thuế của bạn là:  ${salary * 0.2} triệu đồng`;
+            } else if (salary > 80) {
+                return `Thuế của bạn là:  ${salary * 0.3} triệu đồng`;
+            }
+        }
+        alert(tax())
+    </script>
+</body>
+
+</html>
