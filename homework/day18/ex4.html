@@ -9,26 +9,26 @@
 
 <body>
     <script>
-        function bmi(weight, height) {
-            let calcBmi = weight / (height * height);
-            console.log(calcBmi);
-            if (calcBmi > 0 && calcBmi < 18.5) {
-                return `Do BMI của bạn =${calcBmi} nên bạn thiếu cân`;
-            } else if (calcBmi >= 18 && calcBmi < 23) {
-                return `Do BMI của bạn =${calcBmi} nên bạn bình thường`;
-            } else if (calcBmi >= 23 && calcBmi < 25) {
-                return `Do BMI của bạn =${calcBmi} nên bạn thừa cân`;
-            } else if (calcBmi >= 25) {
-                return `Do BMI của bạn =${calcBmi} nên bạn béo phì`;
+        function calcBMI() {
+            let weight = parseFloat(prompt("Nhập chiều cân nặng (kg)"));
+            let height = parseFloat(prompt("Nhập chiều cao (m)"));
+            let BMI = weight / (height * height);
+            console.log(BMI);
+            if (weight <= 0 || height <= 0 ||
+                isNaN(weight) || !isFinite(weight) || weight.toString().includes('e') ||
+                isNaN(height) || !isFinite(height) || height.toString().includes('e')) {
+                return ` Dữ liệu không hợp lệ`;
+            } else if (BMI > 0 && BMI < 18.5) {
+                return `Do BMI của bạn =${BMI} nên bạn thiếu cân`;
+            } else if (BMI >= 18 && BMI < 23) {
+                return `Do BMI của bạn =${BMI} nên bạn bình thường`;
+            } else if (BMI >= 23 && BMI < 25) {
+                return `Do BMI của bạn =${BMI} nên bạn thừa cân`;
             } else {
-                return `Dữ liệu không hợp lệ`;
+                return `Do BMI của bạn =${BMI} nên bạn béo phì`;
             }
         }
-
-
-        const weight = parseFloat(prompt("Nhập chiều cân nặng (kg)"));
-        const height = parseFloat(prompt("Nhập chiều cao (m)"));
-        alert(bmi(weight, height));
+        alert(calcBMI());
     </script>
 </body>
 

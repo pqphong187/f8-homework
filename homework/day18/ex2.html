@@ -11,8 +11,9 @@
     <script>
         function electricBill() {
             let electricNumber = parseFloat(prompt("Nhập số điện của bạn (kWh):"))
-            console.log(electricNumber);
-            if (electricNumber > 0 && electricNumber <= 50) {
+            if (electricNumber <= 0 || isNaN(electricNumber) || !isFinite(electricNumber) || electricNumber.toString().includes('e')) {
+                return ("Dữ liệu không hợp lệ vui lòng nhập lại");
+            } else if (electricNumber > 0 && electricNumber <= 50) {
                 return `Tiền điện của bạn là: ${electricNumber * 1678} đồng`;
             } else if (electricNumber > 50 && electricNumber <= 100) {
                 return `Tiền điện của bạn là: ${((electricNumber - 50) * 1734) + (50 * 1678)} đồng`;

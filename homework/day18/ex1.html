@@ -11,17 +11,18 @@
     <script>
         function tax() {
             let salary = parseFloat(prompt("Nhập số tiền lương của bạn (triệu đồng):"));
-            console.log(salary)
-            if (salary <= 11) {
-                return "Không tính thuế";
+            if (salary < 0 || isNaN(salary) || !isFinite(salary) || salary.toString().includes('e')) {
+                return `Dữ liệu không hợp lệ `;
+            } else if (salary <= 11) {
+                return `Không tính thuế`;
             } else if (salary > 11 && salary <= 25) {
                 return `Thuế của bạn là:  ${salary * 0.05} triệu đồng`;
             } else if (salary > 25 && salary <= 50) {
-                return `Thuế của bạn là:  ${salary * 0.1} triệu đồng`;
+                return `Thuế của bạn là:  ${((salary - 25) * 0.1) + (14 * 0.05)} triệu đồng`;
             } else if (salary > 50 && salary <= 80) {
-                return `Thuế của bạn là:  ${salary * 0.2} triệu đồng`;
-            } else if (salary > 80) {
-                return `Thuế của bạn là:  ${salary * 0.3} triệu đồng`;
+                return `Thuế của bạn là:  ${((salary - 50) * 0.2) + (25 * 0.1) + (14 * 0.05)} triệu đồng`;
+            } else {
+                return `Thuế của bạn là:  ${((salary - 80) * 0.3) + (30 * 0.2) + (25 * 0.1) + (14 * 0.05)}  triệu đồng`;
             }
         }
         alert(tax())
