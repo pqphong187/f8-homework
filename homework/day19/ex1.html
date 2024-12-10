@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1: in số chính phương</title>
+</head>
+
+<body>
+    <script>
+        function printSquareNumber() {
+            let n = parseFloat(prompt("Nhập một số nguyên dương n:"));
+            if (isNaN(n) || n <= 0 || !isFinite(n) || n.toString().includes('e')) {
+                return "Dữ liệu không hợp lệ. Vui lòng nhập một số nguyên dương.";
+            }
+
+            for (let i = 1; i * i <= n; i++) {
+                console.log(i * i);
+            }
+        }
+        alert(printSquareNumber());
+    </script>
+</body>
+
+</html>
