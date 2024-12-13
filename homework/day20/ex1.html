@@ -10,41 +10,49 @@
 <body>
     <script>
         const students = [
-            { name: 'Nguyen Van A', score: 9, group: 'A' },
-            { name: 'Doan Van E', score: 10, group: 'A' },
-            { name: 'Tran Thi B', score: 7, group: 'B' },
-            { name: 'Hoang Thi F', score: 6, group: 'B' },
-            { name: 'Le Van C', score: 5, group: 'C' },
-            { name: 'Pham Thi D', score: 3, group: 'D' },
+            { name: 'Nguyen Van A', score: 9 },
+            { name: 'Tran Thi B', score: 7 },
+            { name: 'Le Van C', score: 5 },
+            { name: 'Pham Thi D', score: 3 },
+            { name: 'Doan Van E', score: 10 },
+            { name: 'Hoang Thi F', score: 6 },
         ];
 
-        let highest = students[0];
-        let lowest = students[0];
-        for (let i = 1; i < students.length; i++) {
-            if (students[i].score > highest.score) {
-                highest = students[i];
+        function classifyStudents(students) {
+            let highest = students[0];
+            let lowest = students[0];
+            const group = { A: [], B: [], C: [], D: [] };
+
+            for (let i = 1; i < students.length; i++) {
+                if (students[i].score > highest.score) {
+                    highest = students[i];
+                }
+                if (students[i].score < lowest.score) {
+                    lowest = students[i];
+                }
             }
-            if (students[i].score < lowest.score) {
-                lowest = students[i];
+
+            for (const student of students) {
+                if (student.score >= 8 && student.score <= 10) {
+                    group.A.push(student);
+                } else if (student.score >= 6 && student.score < 8) {
+                    group.B.push(student);
+                } else if (student.score >= 4 && student.score < 6) {
+                    group.C.push(student);
+                } else {
+                    group.D.push(student);
+                }
             }
+            return {
+                highest,
+                lowest,
+                group,
+            };
         }
 
-        const group = {};
-        for (let i = 0; i < students.length; i++) {
-            const person = students[i];
-            if (!group[person.group]) {
-                group[person.group] = [];
-            }
-            group[person.group].push({ name: person.name, score: person.score });
-        }
-
-        const result = {
-            highest: { name: highest.name, score: highest.score },
-            lowest: { name: lowest.name, score: lowest.score },
-            group,
-        };
-
+        const result = classifyStudents(students);
         console.log(result);
+
     </script>
 </body>
 
