@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const categories = [
+            {
+                id: 1,
+                name: "Electronics",
+                children: [
+                    {
+                        id: 2,
+                        name: "Laptops",
+                        children: [
+                            {
+                                id: 3,
+                                name: "Apple",
+                            },
+                            {
+                                id: 4,
+                                name: "Dell",
+                            },
+                        ],
+                    },
+                    {
+                        id: 5,
+                        name: "Headphones",
+                    },
+                ],
+            },
+            {
+                id: 6,
+                name: "Books",
+                children: [
+                    {
+                        id: 7,
+                        name: "Fiction",
+                        children: [
+                            {
+                                id: 8,
+                                name: "Thrillers",
+                            },
+                            {
+                                id: 9,
+                                name: "Mystery",
+                            },
+                        ],
+                    },
+                    {
+                        id: 10,
+                        name: "Non-Fiction",
+                    },
+                ],
+            },
+        ];
+
+        // câu 1
+        function flattenCategories(categories) {
+            let result = [];
+            let stack = categories.map(category => ({
+                ...category,
+                level: 0
+            }));
+
+            for (let i = 0; i < stack.length; i++) {
+                const current = stack[i];
+                const { children, ...rest } = current;
+                result.push(rest);
+
+                if (children) {
+                    stack.splice(i + 1, 0, ...children.map(child => ({
+                        ...child,
+                        level: current.level + 1,
+                    })));
+                }
+            }
+
+            return result;
+        }
+
+        console.log(flattenCategories(categories));
+
+
+        // câu 2
+        function getCategoryName(categories, categoryId) {
+            const findCategory = flattenCategories(categories).find(category => category.id === categoryId);
+
+            return findCategory ? findCategory.name : null;
+        }
+
+        console.log(getCategoryName(categories, 3));
+        console.log(getCategoryName(categories, 10));
+        console.log(getCategoryName(categories, 99)); 
+    </script>
+</body>
+
+</html>
