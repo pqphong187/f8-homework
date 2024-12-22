@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fibonacci(n) {
+            if (isNaN(n) || n <= 0 || isFinite(n)) {
+                console.log("Số phần tử không hợp lệ");
+                return;
+            }
+
+            const fibonacci = [];
+            for (let i = 0; i < n; i++) {
+                if (i === 0) {
+                    fibonacci.push(0);
+                } else if (i === 1) {
+                    fibonacci.push(1);
+                } else {
+                    fibonacci.push(fibonacci[i - 1] + fibonacci[i - 2]);
+                }
+            }
+            console.log("Dãy Fibonacci:", fibonacci.join(", "));
+        }
+        const n = parseInt(prompt("Nhập số phần tử của dãy Fibonacci:"));
+        fibonacci(n)
+    </script>
+</body>
+
+</html>
