@@ -41,9 +41,30 @@
                 price: 500,
             },
         ];
+
         function getTopProducts(products, top) {
             const topProducts = [];
             const copyProducts = [...products];
+
+            if (!Array.isArray(products) || typeof top !== "number" || top <= 0) {
+                return "Đối số chuyền vào không hợp lệ: 'products' phải là một mảng và 'top' phải là số dương";
+            }
+
+
+            if (top >= copyProducts.length) {
+                for (let i = 0; i < copyProducts.length; i++) {
+                    let maxPrice = 0;
+
+                    for (let j = 1; j < copyProducts.length - i; j++) {
+                        if (copyProducts[j].price > copyProducts[maxPrice].price) {
+                            maxPrice = j;
+                        }
+                    }
+                    topProducts.push(copyProducts[maxPrice]);
+                }
+
+                return topProducts;
+            }
 
             for (let i = 0; i < top; i++) {
                 let maxProduct = copyProducts[0];
@@ -60,12 +81,10 @@
 
                 copyProducts.splice(maxPrice, 1);
             }
-
             return topProducts;
         }
 
-        const result = getTopProducts(products, 3);
-        console.log(result);
+        console.log(getTopProducts(products, 0));
 
     </script>
 </body>

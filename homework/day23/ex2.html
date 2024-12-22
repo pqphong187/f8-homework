@@ -62,6 +62,9 @@
 
         // câu 1
         function flattenCategories(categories) {
+            if (!Array.isArray(categories)) {
+                return "'categories' phải là một mảng";
+            }
             let result = [];
             let stack = categories.map(category => ({
                 ...category,
@@ -89,6 +92,14 @@
 
         // câu 2
         function getCategoryName(categories, categoryId) {
+            if (!Array.isArray(categories)) {
+                return "'categories' phải là một mảng";
+            }
+
+            if (typeof categoryId !== "number" || categoryId <= 0) {
+                return "'categoryId' phải là một số dương";
+            }
+
             const findCategory = flattenCategories(categories).find(category => category.id === categoryId);
 
             return findCategory ? findCategory.name : null;
@@ -96,7 +107,9 @@
 
         console.log(getCategoryName(categories, 3));
         console.log(getCategoryName(categories, 10));
-        console.log(getCategoryName(categories, 99)); 
+        console.log(getCategoryName(categories, 99));
+        console.log(getCategoryName(categories, -1));
+        console.log(getCategoryName("abc", 99)); 
     </script>
 </body>
 
