@@ -10,7 +10,7 @@
 <body>
     <script>
         function fibonacci(n) {
-            if (isNaN(n) || n <= 0 || isFinite(n)) {
+            if (isNaN(n) || n <= 0 || !isFinite(n)) {
                 console.log("Số phần tử không hợp lệ");
                 return;
             }
