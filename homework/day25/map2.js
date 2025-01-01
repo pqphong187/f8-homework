@@ -1,8 +1,8 @@
 Array.prototype.map2 = function (callback, thisArg) {
-  let result = [];
+  const result = [];
   for (let i = 0; i < this.length; i++) {
     if (i in this) {
-      result[i] = callback((thisArg = this[i]), i, this);
+      result[i] = callback.call((thisArg, this[i]), i, this);
     }
   }
   return result;

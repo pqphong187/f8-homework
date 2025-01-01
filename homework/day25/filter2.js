@@ -1,8 +1,8 @@
 Array.prototype.filter2 = function (callback, thisArg) {
-  let result = [];
+  const result = [];
   for (let i = 0; i < this.length; i++) {
     if (i in this) {
-      if (callback((thisArg = this[i]), i, this)) {
+      if (callback.call(thisArg, this[i], i, this)) {
         result.push(this[i]);
       }
     }
@@ -21,3 +21,11 @@ const result2 = arr.filter((value) => {
   return value % 2 !== 0;
 });
 console.log(result2);
+
+// function callback(value) {
+//   console.log(this);
+//   return true;
+// }
+// const result = arr.filter2(callback, { name: "John" });
+
+// console.log(result);
