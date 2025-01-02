@@ -2,13 +2,16 @@ Array.prototype.map2 = function (callback, thisArg) {
   const result = [];
   for (let i = 0; i < this.length; i++) {
     if (i in this) {
-      result[i] = callback.call((thisArg, this[i]), i, this);
+      result[i] = callback.call(thisArg, this[i], i, this);
     }
   }
   return result;
 };
 
 // Sample usage
+
+const arr = [1, 2, , 4, 5, , , , 7];
+
 
 // Sample 1
 const arr1 = [1, 2, 3, 4, 5];
