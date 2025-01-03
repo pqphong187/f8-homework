@@ -5,11 +5,14 @@ Năm 2015:ECMAScript 6 (ES6) ra đời,là phiên bản lớn nhất của ECMAS
 Năm 2016 - nay:Các phiên bản ECMAScript mới được ra mắt liên tục,với nhiều cải tiến và tính năng mới.Cho đến nay javaScript đã trở thành một trong số những ngôn ngữ được ưa chuộng và sử dụng nhiều nhất thế giới.`;
 
 function printHighlight(content, keyword) {
-  if (typeof content !== "string" || content.trim() === "") {
-    return `Nội dung không hợp lệ.`;
+  if (!content || typeof content !== "string" || content.trim() === "") {
+    return "Nội dung không hợp lệ.";
   }
-  if (typeof keyword !== "string" || keyword.trim() === "") {
-    return `Từ khóa không hợp lệ."`;
+  if (!keyword || typeof keyword !== "string" || keyword.trim() === "") {
+    return "Từ khóa không hợp lệ.";
+  }
+  if (keyword.length > content.length) {
+    return "Từ khóa không được dài hơn nội dung.";
   }
 
   const contentLower = content.toLowerCase();
@@ -19,29 +22,31 @@ function printHighlight(content, keyword) {
   let highlightedContent = "";
 
   while (true) {
-    start = contentLower.indexOf(keywordLower, start);
-    if (start === -1) {
-      highlightedContent += content.slice(highlightedContent.length);
+    const index = contentLower.indexOf(keywordLower, start);
+    if (index === -1) {
+      highlightedContent += content.slice(start);
       break;
-    } else {
-      highlightedContent +=
-        content.slice(highlightedContent.length, start) +
-        "<b>" +
-        content.slice(start, start + keyword.length) +
-        "</b>";
-      start += keyword.length;
     }
+    highlightedContent +=
+      content.slice(start, index) +
+      "<b>" +
+      content.slice(index, index + keyword.length) +
+      "</b>";
+    start = index + keyword.length;
   }
+
   return highlightedContent;
 }
 
 function fixContent(content) {
-  content = content.replace(/([.,;:!?])(?=\S)/g, "$1 ");
+  if (!content || typeof content !== "string" || content.trim() === "") {
+    return "Nội dung không hợp lệ.";
+  }
 
-  content = content.replace(/(\S)([({[\]<])/g, "$1 $2");
+  content = content.replace(/([.,;:!?])(\S)/g, "$1 $2");
+
+  content = content.replace(/(\S)([({[<])/g, "$1 $2");
   content = content.replace(/([)}\]>])(\S)/g, "$1 $2");
-
-  content = content.replace(/\s+/g, " ").trim();
 
   return content;
 }
