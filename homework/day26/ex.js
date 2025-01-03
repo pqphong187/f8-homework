@@ -43,7 +43,8 @@ function fixContent(content) {
     return "Nội dung không hợp lệ.";
   }
 
-  content = content.replace(/([.,;:!?])(\S)/g, "$1 $2");
+  // content = content.replace(/([.,;:!?])(\S)/g, "$1 $2");
+  content = content.replace(/([.,;:!?])(?!\s)/g, "$1 ");
 
   content = content.replace(/(\S)([({[<])/g, "$1 $2");
   content = content.replace(/([)}\]>])(\S)/g, "$1 $2");
