@@ -28,5 +28,11 @@ function countdown() {
   document.write(
     `Còn ${prefixDays}${days} ngày ${prefixHours}${hours} giờ ${prefixMinutes}${minutes} phút ${prefixSeconds}${seconds} giây là đến tết 2026`
   );
+
+  if (timeRemaining < 0) {
+    clearInterval(countdown);
+    document.body.innerHTML = "";
+    document.write(`Chúc mừng năm mới`);
+  }
 }
 setInterval(countdown, 1000);
