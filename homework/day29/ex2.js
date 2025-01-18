@@ -37,6 +37,9 @@ const cart = [
 ];
 
 function renderOrder(cart) {
+  if (!Array.isArray(cart) || cart.length === 0) {
+    return `Dữ liệu không hợp lệ `;
+  }
   let tbody = "";
   cart.forEach((item) => {
     let style = "";
@@ -69,7 +72,7 @@ function renderOrder(cart) {
   tfoot += sum;
 
   const myTable = /*html*/ `
-    <table>
+    <table border="1" cellspacing="0" cellpadding="5"> 
         <thead>
             <tr>
                 <th>Tên sản phẩm</th>

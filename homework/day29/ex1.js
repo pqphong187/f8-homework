@@ -42,42 +42,32 @@ const menu = [
 ];
 
 function buildMenu(data) {
-  const mainItems = data.filter((item) => item.parentId === 0);
-  const subItems = data.filter((item) => item.parentId !== 0);
+  if (!Array.isArray(data) || data.length === 0) {
+    return `Dữ liệu không hợp lệ `;
+  }
+  const createMenu = (parentId) => {
+    const items = data.filter((item) => item.parentId === parentId);
+    if (items.length === 0) return null;
+    const ul = document.createElement("ul");
 
-  // menu chính
-  const mainUl = document.createElement("ul");
-  mainUl.id = "main-menu";
-  mainItems.forEach((parent) => {
-    const mainLi = document.createElement("li");
-    const mainA = document.createElement("a");
-    mainA.href = "#";
-    mainA.textContent = parent.name;
-    mainA.style.fontSize = "24px";
-    mainLi.appendChild(mainA);
-
-    // menu con
-    const childrenMenu = subItems.filter(
-      (child) => child.parentId === parent.id
-    );
-    if (childrenMenu.length > 0) {
-      const subUl = document.createElement("ul");
-      childrenMenu.forEach((child) => {
-        const subLi = document.createElement("li");
-        const subA = document.createElement("a");
-        subA.href = "#";
-        subA.textContent = child.name;
-        subA.style.fontSize = "20px";
-        subLi.appendChild(subA);
-        subUl.appendChild(subLi);
-      });
-      mainLi.appendChild(subUl);
-    }
-
-    mainUl.appendChild(mainLi);
-  });
-
-  return mainUl;
+    items.forEach((item) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = "#";
+      a.textContent = item.name;
+      a.style.fontSize = parentId === 0 ? "24px" : "20px";
+      li.appendChild(a);
+      const subMenu = createMenu(item.id);
+      if (subMenu) {
+        li.appendChild(subMenu);
+      }
+      ul.appendChild(li);
+    });
+    return ul;
+  };
+  const menu = createMenu(0);
+  menu.id = "main-menu";
+  return menu;
 }
 
 const menuElement = buildMenu(menu);
